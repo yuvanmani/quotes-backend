@@ -59,7 +59,7 @@ const authController = {
                     await existingUser.save();
 
                     // send new OTP via email
-                    await sendEmail(email, "Your OTP", `OTP for registering in AI - Quotes : ${newOtp}`)
+                    await sendEmail(email, "Your OTP", `OTP for registering in Quotes Generator : ${newOtp}`)
 
                     // send response to the user for new OTP
                     return res.status(200).json({ message: "OTP has been sent to your email" });
@@ -87,7 +87,7 @@ const authController = {
             await newUser.save();
 
             // send OTP for verification via email
-            await sendEmail(email, "Your OTP", `OTP for registering in AI - Quotes : ${otp}`);
+            await sendEmail(email, "Your OTP", `OTP for registering in Quotes Generator : ${otp}`);
 
             // send response to the user
             return res.status(201).json({ message: "OTP sent to your email for verification" });

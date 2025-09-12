@@ -3,6 +3,7 @@ const authRouter = require("./routes/authRoutes");
 const logger = require("./utils/logger");
 const cookieParser = require("cookie-parser");
 const errorRoute = require("./utils/errorRoute");
+const quoteRouter = require("./routes/quoteRoute");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(logger);
 
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/quotes", quoteRouter);
 
 // middleware to handle 404 errors
 app.use(errorRoute);
