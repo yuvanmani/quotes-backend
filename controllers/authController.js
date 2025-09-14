@@ -168,8 +168,8 @@ const authController = {
             // set the token in cookie
             res.cookie("token", token, {
                 httpOnly: true,
-                secure: false,
-                sameSite: "Strict"
+                secure: true,
+                sameSite: "None"
             })
 
             // send response to the user
@@ -186,7 +186,7 @@ const authController = {
             res.clearCookie("token", {
                 httpOnly: true,
                 secure: true,
-                sameSite: "Strict"
+                sameSite: "None"
             });
 
             // send response to the user
