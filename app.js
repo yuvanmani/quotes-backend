@@ -4,8 +4,15 @@ const logger = require("./utils/logger");
 const cookieParser = require("cookie-parser");
 const errorRoute = require("./utils/errorRoute");
 const quoteRouter = require("./routes/quoteRoute");
+const cors = require("cors");
 
 const app = express();
+
+// enable cors to accept request from another domain
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}))
 
 // middleware to parse request cookies
 app.use(cookieParser());
